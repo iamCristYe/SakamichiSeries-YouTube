@@ -5,7 +5,7 @@ yt-dlp --playlist-start 255 -f 140 -o '%(playlist)s/%(playlist_index)03d - %(tit
 # H
 yt-dlp --playlist-start  92 -f 140 -o '%(playlist)s/%(playlist_index)03d - %(title)s - %(id)s.%(ext)s' "PLslx0ZK4M9zertJb1q9I4vL3Z8IMtIw4D"
 # S
-yt-dlp --playlist-start  29 -f 140 -o '%(playlist)s/%(playlist_index)03d - %(title)s - %(id)s.%(ext)s' "PLslx0ZK4M9ze0MqtIiTguDfmP0eOvdj2i"
+yt-dlp --playlist-start  35 -f 140 -o '%(playlist)s/%(playlist_index)03d - %(title)s - %(id)s.%(ext)s' "PLslx0ZK4M9ze0MqtIiTguDfmP0eOvdj2i"
 
 python3 rename.py
 
