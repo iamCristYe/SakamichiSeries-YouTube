@@ -1,4 +1,4 @@
-# update title_ files before running this script
+# update title_ files before running this script: pwsh .\process.ps1
 
 # N
 yt-dlp --playlist-start 255 -f 140 -o '%(playlist)s/%(playlist_index)03d - %(title)s - %(id)s.%(ext)s' "PLslx0ZK4M9zfRUTXxZfbOgnTp4MuLcTjf"
@@ -7,6 +7,6 @@ yt-dlp --playlist-start  92 -f 140 -o '%(playlist)s/%(playlist_index)03d - %(tit
 # S
 yt-dlp --playlist-start  35 -f 140 -o '%(playlist)s/%(playlist_index)03d - %(title)s - %(id)s.%(ext)s' "PLslx0ZK4M9ze0MqtIiTguDfmP0eOvdj2i"
 
-python3 rename.py
+bash -c "python3 rename.py"
 
-sha256sum */* > sha256sum
+bash -c "sha256sum */* > sha256sum"

@@ -7,10 +7,10 @@ def rename(title_file, dir_name):
         for filename in os.listdir(dir_name):
             index = int(filename[0:3])
             # skip English titles or already renamed ones
-            if filename.startswith(f"{filename[0:5]} {titles[6 + 6 * index]}"):
+            if filename.startswith(f"{filename[0:5]} {titles[6 + 6 * index]} - {titles[8 + 6 * index]}"):
                 continue
 
-            new_name = f"{filename[0:5]} {titles[6 + 6 * index]} - {filename[6:]}"
+            new_name = f"{filename[0:5]} {titles[6 + 6 * index]} - {titles[8 + 6 * index]} - {filename[6:]}"
             try:
                 os.rename(f"{dir_name}/{filename}", f"{dir_name}/{new_name}")
             except OSError as err:
