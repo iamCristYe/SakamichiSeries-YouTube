@@ -56,6 +56,7 @@ def rename(dir_name):
             album = titles[8 + 6 * index]
             album = re.sub(r"\s?\(Special Edition\)", "", album)
             album = re.sub(r"\s?\(Complete Edition\)", "", album)
+            album = re.sub(r"\s?\(New Song Edition\)", "", album)
             album = re.sub(r"\s?<?\(?初回限定盤>?\)?", "", album)
             album = re.sub(r"\s?<?\(?通常盤>?\)?", "", album)
             album = re.sub(r"\s?<?\(?Type-?\s?[A-E]>?\)?", "", album)
