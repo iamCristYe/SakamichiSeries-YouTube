@@ -52,6 +52,7 @@ def rename(dir_name):
             kanji = kanji.replace("-", "–")
             kanji = kanji.replace("?", "？")
             kanji = kanji.replace("!", "！")
+            kanji = re.sub(r"\s?\[Vocal\s?\:\s?齋藤飛鳥\s?\(乃木坂46\)\]", "", kanji)
 
             album = titles[8 + 6 * index]
             album = re.sub(r"\s?\(Special Edition\)", "", album)
