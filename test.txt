@@ -1,7 +1,0 @@
-['H005 - W–KEYAKIZAKAの詩 - 不協和音 - W-Keyakizaka No Uta - QqKEFhnccfs.m4a', 'K021 - W–KEYAKIZAKAの詩 - 不協和音 - W-Keyakizaka No Uta - QqKEFhnccfs.m4a']
-['H008 - 猫の名前 - 真っ白なものは汚したくなる - Nekononamae - jOm7zfoU9gw.m4a', 'K030 - 猫の名前 - 真っ白なものは汚したくなる - Nekononamae - jOm7zfoU9gw.m4a']
-['H009 - 太陽は見上げる人を選ばない - 真っ白なものは汚したくなる - Taiyouwa Miageruhitowo Erabanai - L0vKkTPvsyA.m4a', 'K031 - 太陽は見上げる人を選ばない - 真っ白なものは汚したくなる - Taiyouwa Miageruhitowo Erabanai - L0vKkTPvsyA.m4a']
-['H015 - 国境のない時代 - ジャーバージャ - 国境のない時代 - pW5vVD_YMLM.m4a', 'K050 - 国境のない時代 - ジャーバージャ - 国境のない時代 - pW5vVD_YMLM.m4a', 'N164 - 国境のない時代 - ジャーバージャ - 国境のない時代 - pW5vVD_YMLM.m4a']
-['H037 - 初恋ドア - ジワるDAYS - 初恋ドア - l9H96f7_ts4.m4a', 'K062 - 初恋ドア - ジワるDAYS - 初恋ドア - l9H96f7_ts4.m4a', 'N186 - 初恋ドア - ジワるDAYS - 初恋ドア - l9H96f7_ts4.m4a']
-['K019 - 誰のことを一番 愛してる？ - シュートサイン - 誰のことを一番 愛してる - BqjKs9D0OVU.m4a', 'N125 - 誰のことを一番 愛してる？ - シュートサイン - 誰のことを一番 愛してる - BqjKs9D0OVU.m4a']
-['K063 - 必然性 - ジワるDAYS - 必然性 - sHiwHA33kPM.m4a', 'N187 - 必然性 - ジワるDAYS - 必然性 - sHiwHA33kPM.m4a']
