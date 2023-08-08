@@ -1,5 +1,6 @@
 import os
 import re
+import mutagen
 
 
 def reverse(dir_name):
@@ -31,6 +32,8 @@ def rename(dir_name):
             kanji = kanji.replace("!", "！")
             kanji = re.sub(r"\s?\[Vocal\s?\:\s?齋藤飛鳥\s?\(乃木坂46\)\]", "", kanji)
 
+            artist = titles[15 + 8 * index]
+
             album = titles[16 + 8 * index]
             album = re.sub(r"\s?\(Special Edition\)", "", album)
             album = re.sub(r"\s?\(Complete Edition\)", "", album)
@@ -46,6 +49,12 @@ def rename(dir_name):
                 os.rename(f"{dir_name}/{filename}", f"SakamichiSeries/{new_name}")
             except OSError as err:
                 print("OS Error: {0}{1} already exists.".format(err, new_name))
+
+            audio = mutagen.File(f"SakamichiSeries/{new_name}", easy=True)
+            audio["title"] = kanji
+            audio["artist"] = artist
+            audio["album"] = album
+            audio.save(f"SakamichiSeries/{new_name}")
 
 
 os.makedirs("SakamichiSeries", exist_ok=True)
