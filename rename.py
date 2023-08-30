@@ -41,14 +41,16 @@ def rename(dir_name):
             album = re.sub(r"\s?<?\(?通常盤>?\)?", "", album)
             album = re.sub(r"\s?<?\(?コンプリートパック>?\)?", "", album)
             album = re.sub(r"\s?<?\(?Type-?\s?[A-E]>?\)?", "", album)
-            album = album.replace("?", "？")
-            album = album.replace("!", "！")
+            album = album.replace("？", "?")
+            album = album.replace("！", "!")
+            album = re.sub(r"\s$", "", album)
+            album = re.sub(r"\!\s+", "!", album)
 
             album_list = {
                 "NS": [
                     "ぐるぐるカーテン",
                     "おいでシャンプー",
-                    "走れ！Bicycle",
+                    "走れ!Bicycle",
                     "制服のマネキン",
                     "君の名は希望",
                     "ガールズルール",
@@ -56,7 +58,7 @@ def rename(dir_name):
                     "気づいたら片想い",
                     "夏のFree&Easy",
                     "命は美しい",
-                    "何度目の青空か？",
+                    "何度目の青空か?",
                     "太陽ノック",
                     "今、話したい誰かがいる",
                     "ハルジオンが咲く頃",
@@ -66,16 +68,16 @@ def rename(dir_name):
                     "逃げ水",
                     "いつかできるから今日できる",
                     "シンクロニシティ",
-                    "ジコチューで行こう！",
+                    "ジコチューで行こう!",
                     "帰り道は遠回りしたくなる",
-                    "Sing Out！",
+                    "Sing Out!",
                     "夜明けまで強がらなくてもいい",
                     "しあわせの保護色",
                     "僕は僕を好きになる",
                     "ごめんねFingers crossed",
                     "君に叱られた",
                     "Actually...",
-                    "好きというのはロックだぜ！",
+                    "好きというのはロックだぜ!",
                     "ここにはないもの",
                     "人は夢を二度見る",
                     "おひとりさま天国",
@@ -93,14 +95,14 @@ def rename(dir_name):
                 "HS": [
                     "キュン",
                     "ドレミソラシド",
-                    "こんなに好きになっちゃっていいの？",
+                    "こんなに好きになっちゃっていいの?",
                     "ソンナコトナイヨ",
                     "君しか勝たん",
                     "ってか",
                     "僕なんか",
                     "月と星が踊るMidnight",
                     "One choice",
-                    "Am I ready？",
+                    "Am I ready?",
                 ],
                 "HKA": [
                     "走り出す瞬間",
@@ -108,9 +110,9 @@ def rename(dir_name):
                 "HA": [
                     "ひなたざか",
                 ],
-                "SS": ["Nobody's fault", "BAN", "流れ弾", "五月雨よ", "桜月", "Start over！"],
+                "SS": ["Nobody's fault", "BAN", "流れ弾", "五月雨よ", "桜月", "Start over!"],
                 "SA": [
-                    "As you know？",
+                    "As you know?",
                 ],
                 "KS": [
                     "サイレントマジョリティー",
@@ -118,7 +120,7 @@ def rename(dir_name):
                     "二人セゾン",
                     "不協和音",
                     "風に吹かれても",
-                    "ガラスを割れ！",
+                    "ガラスを割れ!",
                     "アンビバレント",
                     "黒い羊",
                 ],
