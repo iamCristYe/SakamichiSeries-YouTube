@@ -10,7 +10,8 @@ def reverse(dir_name):
             first_separator = filename.find("-")
             second_separator = filename.find("-", first_separator + 1)
             third_separator = filename.find("-", second_separator + 1)
-            previous_name = f"{filename[1:4]} {filename[third_separator:]}"
+            fourth_separator = filename.find("-", third_separator + 1)
+            previous_name = f"{filename[1:4]} {filename[fourth_separator:]}"
             try:
                 os.rename(f"SakamichiSeries/{filename}", f"{dir_name}/{previous_name}")
             except OSError as err:
@@ -40,9 +41,105 @@ def rename(dir_name):
             album = re.sub(r"\s?\(New Song Edition\)", "", album)
             album = re.sub(r"\s?<?\(?初回限定盤>?\)?", "", album)
             album = re.sub(r"\s?<?\(?通常盤>?\)?", "", album)
+            album = re.sub(r"\s?<?\(?コンプリートパック>?\)?", "", album)
             album = re.sub(r"\s?<?\(?Type-?\s?[A-E]>?\)?", "", album)
             album = album.replace("?", "？")
             album = album.replace("!", "！")
+
+            album_list = {
+                "NS": [
+                    "ぐるぐるカーテン",
+                    "おいでシャンプー",
+                    "走れ！Bicycle",
+                    "制服のマネキン",
+                    "君の名は希望",
+                    "ガールズルール",
+                    "バレッタ",
+                    "気づいたら片想い",
+                    "夏のFree&Easy",
+                    "命は美しい",
+                    "何度目の青空か？",
+                    "太陽ノック",
+                    "今、話したい誰かがいる",
+                    "ハルジオンが咲く頃",
+                    "裸足でSummer",
+                    "サヨナラの意味",
+                    "インフルエンサー",
+                    "逃げ水",
+                    "いつかできるから今日できる",
+                    "シンクロニシティ",
+                    "ジコチューで行こう！",
+                    "帰り道は遠回りしたくなる",
+                    "Sing Out！",
+                    "夜明けまで強がらなくてもいい",
+                    "しあわせの保護色",
+                    "僕は僕を好きになる",
+                    "ごめんねFingers crossed",
+                    "君に叱られた",
+                    "Actually...",
+                    "好きというのはロックだぜ！",
+                    "ここにはないもの",
+                    "僕たちのサヨナラ",
+                    "人は夢を二度見る",
+                    "おひとりさま天国",
+                ],
+                "NA": [
+                    "透明な色",
+                    "それぞれの椅子",
+                    "生まれてから初めて見た夢",
+                    "今が思い出になるまで",
+                ],
+                "NUA": ["僕だけの君 ~Under Super Best~"],
+                "NBA": [
+                    "Time flies",
+                ],
+                "HS": [
+                    "キュン",
+                    "ドレミソラシド",
+                    "こんなに好きになっちゃっていいの？",
+                    "ソンナコトナイヨ",
+                    "君しか勝たん",
+                    "ってか",
+                    "僕なんか",
+                    "月と星が踊るMidnight",
+                    "One choice",
+                    "Am I ready？",
+                ],
+                "HKA": [
+                    "走り出す瞬間",
+                ],
+                "HA": [
+                    "ひなたざか",
+                ],
+                "SS": ["Nobody's fault", "BAN", "流れ弾", "五月雨よ", "桜月", "Start over！"],
+                "SA": [
+                    "As you know？",
+                ],
+                "KS": [
+                    "サイレントマジョリティー",
+                    "世界には愛しかない",
+                    "二人セゾン",
+                    "不協和音",
+                    "風に吹かれても",
+                    "ガラスを割れ！",
+                    "アンビバレント",
+                    "黒い羊",
+                ],
+                "KA": [
+                    "真っ白なものは汚したくなる",
+                ],
+                "KBA": [
+                    "永遠より長い一瞬 ～あの頃、確かに存在した私たち～",
+                ],
+            }
+
+            flag = True
+            for album_category in album_list:
+                if album in album_list[album_category]:
+                    album = f"{album_category}{album_list[album_category].index(album)+1:02} - {album}"
+                    flag = False
+            if flag:
+                album = f"Other - {album}"
 
             new_name = f"{group_letter}{index:03} - {kanji} - {album} - {filename[6:]}"
             try:
