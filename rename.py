@@ -9,9 +9,7 @@ def reverse(dir_name):
         if filename[0] == group_letter:
             first_separator = filename.find("-")
             second_separator = filename.find("-", first_separator + 1)
-            third_separator = filename.find("-", second_separator + 1)
-            fourth_separator = filename.find("-", third_separator + 1)
-            previous_name = f"{filename[1:4]} {filename[fourth_separator:]}"
+            previous_name = f"{filename[1:4]} {filename[second_separator:]}"
             try:
                 os.rename(f"SakamichiSeries/{filename}", f"{dir_name}/{previous_name}")
             except OSError as err:
@@ -79,7 +77,6 @@ def rename(dir_name):
                     "Actually...",
                     "好きというのはロックだぜ！",
                     "ここにはないもの",
-                    "僕たちのサヨナラ",
                     "人は夢を二度見る",
                     "おひとりさま天国",
                 ],
@@ -141,7 +138,7 @@ def rename(dir_name):
             if flag:
                 album = f"Other - {album}"
 
-            new_name = f"{group_letter}{index:03} - {kanji} - {album} - {filename[6:]}"
+            new_name = f"{group_letter}{index:03} - {kanji} - {filename[6:]}"
             try:
                 os.rename(f"{dir_name}/{filename}", f"SakamichiSeries/{new_name}")
             except OSError as err:
