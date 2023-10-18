@@ -110,7 +110,15 @@ def rename(dir_name):
                 "HA": [
                     "ひなたざか",
                 ],
-                "SS": ["Nobody's fault", "BAN", "流れ弾", "五月雨よ", "桜月", "Start over!"],
+                "SS": [
+                    "Nobody's fault",
+                    "BAN",
+                    "流れ弾",
+                    "五月雨よ",
+                    "桜月",
+                    "Start over!",
+                    "承認欲求",
+                ],
                 "SA": [
                     "As you know?",
                 ],
@@ -147,7 +155,7 @@ def rename(dir_name):
                 print("OS Error: {0}{1} already exists.".format(err, new_name))
 
             audio = mutagen.File(f"SakamichiSeries/{new_name}", easy=True)
-            audio["title"] = kanji
+            audio["title"] = f"{group_letter}{index:03} - {kanji}"
             audio["artist"] = artist
             audio["album"] = album
             audio.save(f"SakamichiSeries/{new_name}")
