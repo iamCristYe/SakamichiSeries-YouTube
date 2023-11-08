@@ -107,9 +107,7 @@ def rename(dir_name):
                 "HKA": [
                     "走り出す瞬間",
                 ],
-                "HA": [
-                    "ひなたざか",
-                ],
+                "HA": ["ひなたざか", "脈打つ感情"],
                 "SS": [
                     "Nobody's fault",
                     "BAN",
