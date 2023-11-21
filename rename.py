@@ -170,11 +170,11 @@ import sys
 mode = sys.argv[1]
 if mode == "reverse":
     reverse("乃木坂46全曲 All Songs from Nogizaka46")
-    reverse("日向坂46全曲 All Songs from Hinatazaka46")
-    reverse("櫻坂46全曲 All Songs from Sakurazaka46")
     reverse("欅坂46全曲 All Songs from Keyakizaka46")
+    reverse("櫻坂46全曲 All Songs from Sakurazaka46")
+    reverse("日向坂46全曲 All Songs from Hinatazaka46")
 if mode == "rename":
     rename("乃木坂46全曲 All Songs from Nogizaka46")
-    rename("日向坂46全曲 All Songs from Hinatazaka46")
-    rename("櫻坂46全曲 All Songs from Sakurazaka46")
     rename("欅坂46全曲 All Songs from Keyakizaka46")
+    rename("櫻坂46全曲 All Songs from Sakurazaka46")
+    rename("日向坂46全曲 All Songs from Hinatazaka46")
