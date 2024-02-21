@@ -117,6 +117,7 @@ def rename(dir_name):
                     "桜月",
                     "Start over!",
                     "承認欲求",
+                    "何歳の頃に戻りたいのか？",
                 ],
                 "SA": [
                     "As you know?",
