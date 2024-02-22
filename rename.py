@@ -43,6 +43,8 @@ def rename(dir_name):
             album = re.sub(r"\s?<?\(?Type-?\s?[A-E]>?\)?", "", album)
             album = album.replace("？", "?")
             album = album.replace("！", "!")
+            album = album.replace("＆", "&")
+            album = album.replace("〜", "~")
             album = re.sub(r"\s$", "", album)
             album = re.sub(r"\!\s+", "!", album)
 
@@ -117,7 +119,7 @@ def rename(dir_name):
                     "桜月",
                     "Start over!",
                     "承認欲求",
-                    "何歳の頃に戻りたいのか？",
+                    "何歳の頃に戻りたいのか?",
                 ],
                 "SA": [
                     "As you know?",
