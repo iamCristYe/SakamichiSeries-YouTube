@@ -24,16 +24,16 @@ def rename(dir_name):
         for filename in os.listdir(dir_name):
             index = int(filename[0:3])
 
-            kanji = titles[14 + 8 * index]
+            kanji = titles[21 + 5 * index]
             kanji = kanji.replace("/", "⁄")
             kanji = kanji.replace("-", "–")
             kanji = kanji.replace("?", "？")
             kanji = kanji.replace("!", "！")
             kanji = re.sub(r"\s?\[Vocal\s?\:\s?齋藤飛鳥\s?\(乃木坂46\)\]", "", kanji)
 
-            artist = titles[15 + 8 * index]
+            artist = titles[22 + 5 * index]
 
-            album = titles[16 + 8 * index]
+            album = titles[23 + 5 * index]
             album = re.sub(r"\s?\(Special Edition\)", "", album)
             album = re.sub(r"\s?\(Complete Edition\)", "", album)
             album = re.sub(r"\s?\(New Song Edition\)", "", album)
@@ -41,10 +41,9 @@ def rename(dir_name):
             album = re.sub(r"\s?<?\(?通常盤>?\)?", "", album)
             album = re.sub(r"\s?<?\(?コンプリートパック>?\)?", "", album)
             album = re.sub(r"\s?<?\(?Type-?\s?[A-E]>?\)?", "", album)
-            album = album.replace("？", "?")
-            album = album.replace("！", "!")
-            album = album.replace("＆", "&")
-            album = album.replace("〜", "~")
+            album = album.replace("?", "？")
+            album = album.replace("!", "！")
+            album = album.replace("~", "〜")
             album = re.sub(r"\s$", "", album)
             album = re.sub(r"\!\s+", "!", album)
 
@@ -59,7 +58,7 @@ def rename(dir_name):
                     "バレッタ",
                     "気づいたら片想い",
                     "夏のFree&Easy",
-                    "何度目の青空か?",
+                    "何度目の青空か？",
                     "命は美しい",
                     "太陽ノック",
                     "今、話したい誰かがいる",
@@ -70,16 +69,16 @@ def rename(dir_name):
                     "逃げ水",
                     "いつかできるから今日できる",
                     "シンクロニシティ",
-                    "ジコチューで行こう!",
+                    "ジコチューで行こう！",
                     "帰り道は遠回りしたくなる",
-                    "Sing Out!",
+                    "Sing Out！",
                     "夜明けまで強がらなくてもいい",
                     "しあわせの保護色",
                     "僕は僕を好きになる",
                     "ごめんねFingers crossed",
                     "君に叱られた",
                     "Actually...",
-                    "好きというのはロックだぜ!",
+                    "好きというのはロックだぜ！",
                     "ここにはないもの",
                     "人は夢を二度見る",
                     "おひとりさま天国",
@@ -91,7 +90,7 @@ def rename(dir_name):
                     "生まれてから初めて見た夢",
                     "今が思い出になるまで",
                 ],
-                "NUA": ["僕だけの君 ~Under Super Best~"],
+                "NUA": ["僕だけの君～Under Super Best～"],
                 "NBA": [
                     "Time flies",
                 ],
@@ -138,15 +137,21 @@ def rename(dir_name):
                     "真っ白なものは汚したくなる",
                 ],
                 "KBA": [
-                    "永遠より長い一瞬 ～あの頃、確かに存在した私たち～",
+                    "永遠より長い一瞬 〜 あの頃、確かに存在した私たち 〜",
                 ],
             }
 
             flag = True
             for album_category in album_list:
-                if album in album_list[album_category]:
-                    album = f"{album_category}{album_list[album_category].index(album)+1:02} - {album}"
-                    flag = False
+                for album_in_list in album_list[album_category]:
+                    album_in_list_temp = (
+                        album_in_list.replace("?", "？")
+                        .replace("!", "！")
+                        .replace("~", "〜")
+                    )
+                    if album == album_in_list_temp:
+                        album = f"{album_category}{album_list[album_category].index(album_in_list)+1:02} - {album_in_list}"
+                        flag = False
             if flag:
                 album = f"Other - {album}"
 
