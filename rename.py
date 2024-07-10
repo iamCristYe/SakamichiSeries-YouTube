@@ -106,6 +106,7 @@ def rename(dir_name):
                     "月と星が踊るMidnight",
                     "One choice",
                     "Am I ready?",
+                    "君はハニーデュー",
                 ],
                 "HKA": [
                     "走り出す瞬間",
