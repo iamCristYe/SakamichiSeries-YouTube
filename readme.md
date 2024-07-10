@@ -9,7 +9,7 @@ $H_count = (Get-ChildItem "日向坂46全曲 All Songs from Hinatazaka46" | Meas
 yt-dlp --playlist-start $H_count -f 140 -o '日向坂46全曲 All Songs from Hinatazaka46/%(playlist_index)03d - %(title)s - %(id)s.%(ext)s' "PLslx0ZK4M9zd7QFaTHsOJP9SOFnK6tJrs"
 # S
 $S_count = (Get-ChildItem "櫻坂46全曲 All Songs from Sakurazaka46" | Measure-Object).count
-yt-dlp --playlist-start $S_count -f 140 -o '櫻坂46全曲 All Songs from Sakurazaka46/%(playlist_index)03d - %(title)s - %(id)s.%(ext)s' "PLslx0ZK4M9zd7QFaTHsOJP9SOFnK6tJrs"
+yt-dlp --playlist-start $S_count -f 140 -o '櫻坂46全曲 All Songs from Sakurazaka46/%(playlist_index)03d - %(title)s - %(id)s.%(ext)s' "PLslx0ZK4M9zertJb1q9I4vL3Z8IMtIw4D"
 
 # Update name files and rename.py
 
