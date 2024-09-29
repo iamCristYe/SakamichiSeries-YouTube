@@ -108,6 +108,7 @@ def rename(dir_name):
                     "One choice",
                     "Am I ready?",
                     "君はハニーデュー",
+                    "絶対的第六感",
                 ],
                 "HKA": [
                     "走り出す瞬間",
