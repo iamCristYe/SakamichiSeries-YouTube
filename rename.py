@@ -124,6 +124,7 @@ def rename(dir_name):
                     "承認欲求",
                     "何歳の頃に戻りたいのか?",
                     "自業自得",
+                    "I want tomorrow to come",
                 ],
                 "SA": [
                     "As you know?",
