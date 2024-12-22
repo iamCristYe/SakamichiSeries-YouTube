@@ -24,16 +24,16 @@ def rename(dir_name):
         for filename in os.listdir(dir_name):
             index = int(filename[0:3])
 
-            kanji = titles[21 + 5 * index]
+            kanji = titles[18 + 8 * index]
             kanji = kanji.replace("/", "⁄")
             kanji = kanji.replace("-", "–")
             kanji = kanji.replace("?", "？")
             kanji = kanji.replace("!", "！")
             kanji = re.sub(r"\s?\[Vocal\s?\:\s?齋藤飛鳥\s?\(乃木坂46\)\]", "", kanji)
 
-            artist = titles[22 + 5 * index]
+            artist = titles[19 + 8 * index]
 
-            album = titles[23 + 5 * index]
+            album = titles[20 + 8 * index]
             album = re.sub(r"\s?\(Special Edition\)", "", album)
             album = re.sub(r"\s?\(Complete Edition\)", "", album)
             album = re.sub(r"\s?\(New Song Edition\)", "", album)
