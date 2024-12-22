@@ -85,6 +85,7 @@ def rename(dir_name):
                     "Monopoly",
                     "チャンスは平等",
                     "チートデイ",
+                    "歩道橋",
                 ],
                 "NA": [
                     "透明な色",
