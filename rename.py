@@ -24,16 +24,16 @@ def rename(dir_name):
         for filename in os.listdir(dir_name):
             index = int(filename[0:3])
 
-            kanji = titles[7 + 4 * index]
+            kanji = titles[28 + 5 * (index - 1)]
             kanji = kanji.replace("/", "⁄")
             kanji = kanji.replace("-", "–")
             kanji = kanji.replace("?", "？")
             kanji = kanji.replace("!", "！")
             kanji = re.sub(r"\s?\[Vocal\s?\:\s?齋藤飛鳥\s?\(乃木坂46\)\]", "", kanji)
 
-            artist = titles[8 + 4 * index]
+            artist = titles[29 + 5 * (index - 1)]
 
-            album = titles[9 + 4 * index]
+            album = titles[30 + 5 * (index - 1)]
             album = re.sub(r"\s?\(Special Edition\)", "", album)
             album = re.sub(r"\s?\(Complete Edition\)", "", album)
             album = re.sub(r"\s?\(New Song Edition\)", "", album)
@@ -87,6 +87,7 @@ def rename(dir_name):
                     "チートデイ",
                     "歩道橋",
                     "ネーブルオレンジ",
+                    "Same numbers"
                 ],
                 "NA": [
                     "透明な色",
@@ -112,6 +113,7 @@ def rename(dir_name):
                     "君はハニーデュー",
                     "絶対的第六感",
                     "卒業写真だけが知ってる",
+                    "Love yourself!"
                 ],
                 "HKA": [
                     "走り出す瞬間",
@@ -129,9 +131,11 @@ def rename(dir_name):
                     "自業自得",
                     "I want tomorrow to come",
                     "UDAGAWA GENERATION",
+                    "Make or Break"
                 ],
                 "SA": [
                     "As you know?",
+                    "Addiction"
                 ],
                 "KS": [
                     "サイレントマジョリティー",
