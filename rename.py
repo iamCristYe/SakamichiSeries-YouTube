@@ -87,7 +87,7 @@ def rename(dir_name):
                     "チートデイ",
                     "歩道橋",
                     "ネーブルオレンジ",
-                    "Same numbers"
+                    "Same numbers",
                 ],
                 "NA": [
                     "透明な色",
@@ -113,7 +113,8 @@ def rename(dir_name):
                     "君はハニーデュー",
                     "絶対的第六感",
                     "卒業写真だけが知ってる",
-                    "Love yourself!"
+                    "Love yourself!",
+                    "お願いバッハ！",
                 ],
                 "HKA": [
                     "走り出す瞬間",
@@ -131,12 +132,9 @@ def rename(dir_name):
                     "自業自得",
                     "I want tomorrow to come",
                     "UDAGAWA GENERATION",
-                    "Make or Break"
+                    "Make or Break",
                 ],
-                "SA": [
-                    "As you know?",
-                    "Addiction"
-                ],
+                "SA": ["As you know?", "Addiction"],
                 "KS": [
                     "サイレントマジョリティー",
                     "世界には愛しかない",
