@@ -133,6 +133,7 @@ def rename(dir_name):
                     "I want tomorrow to come",
                     "UDAGAWA GENERATION",
                     "Make or Break",
+                    "Unhappy birthday構文",
                 ],
                 "SA": ["As you know?", "Addiction"],
                 "KS": [
