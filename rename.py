@@ -88,6 +88,7 @@ def rename(dir_name):
                     "歩道橋",
                     "ネーブルオレンジ",
                     "Same numbers",
+                    "ビリヤニ",
                 ],
                 "NA": [
                     "透明な色",
