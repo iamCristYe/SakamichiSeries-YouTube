@@ -15,5 +15,5 @@ yt-dlp --playlist-start $S_count -f 140 -o '櫻坂46全曲 All Songs from Sakura
 
 bash -c "python3 rename.py rename"
 
-bash -c "sha256sum SakamichiSeries/* > sha256sum"
+bash -c "sha256sum SakamichiSeries/*/* > sha256sum"
 ```

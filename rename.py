@@ -5,15 +5,16 @@ import mutagen
 
 def reverse(dir_name):
     group_letter = dir_name.split()[-1][0]
-    for filename in os.listdir("SakamichiSeries"):
-        if filename[0] == group_letter:
-            first_separator = filename.find("-")
-            second_separator = filename.find("-", first_separator + 1)
-            previous_name = f"{filename[1:4]} {filename[second_separator:]}"
-            try:
-                os.rename(f"SakamichiSeries/{filename}", f"{dir_name}/{previous_name}")
-            except OSError as err:
-                print("OS Error: {0}{1} already exists.".format(err, previous_name))
+    for root, dirs, files in os.walk("SakamichiSeries"):
+        for filename in files:
+            if filename[0] == group_letter:
+                first_separator = filename.find("-")
+                second_separator = filename.find("-", first_separator + 1)
+                previous_name = f"{filename[1:4]} {filename[second_separator:]}"
+                try:
+                    os.rename(f"{root}/{filename}", f"{dir_name}/{previous_name}")
+                except OSError as err:
+                    print("OS Error: {0}{1} already exists.".format(err, previous_name))
 
 
 def rename(dir_name):
@@ -157,6 +158,7 @@ def rename(dir_name):
             }
 
             flag = True
+            album_dir = None
             for album_category in album_list:
                 for album_in_list in album_list[album_category]:
                     album_in_list_temp = (
@@ -166,21 +168,39 @@ def rename(dir_name):
                     )
                     if album == album_in_list_temp:
                         album = f"{album_category}{album_list[album_category].index(album_in_list)+1:02} - {album_in_list}"
+                        album_dir = album
                         flag = False
             if flag:
                 album = f"Other - {album}"
+                album_dir = "Other"
+            
+            # Clean album_dir of special characters for directory name
+            album_dir_clean = album_dir.replace("/", "⁄")
+            album_dir_clean = album_dir_clean.replace("?", "？")
+            album_dir_clean = album_dir_clean.replace("!", "！")
+            album_dir_clean = album_dir_clean.replace("~", "〜")
+            album_dir_clean = album_dir_clean.replace(":", "：")
+            album_dir_clean = album_dir_clean.replace("|", "｜")
+            album_dir_clean = album_dir_clean.replace("<", "＜")
+            album_dir_clean = album_dir_clean.replace(">", "＞")
+            album_dir_clean = album_dir_clean.replace('"', "＂")
+            album_dir_clean = album_dir_clean.replace('...', "…")
+            album_dir = album_dir_clean
 
             new_name = f"{group_letter}{index:03} - {kanji} - {filename[6:]}"
+            album_subdir = f"SakamichiSeries/{album_dir}"
+            os.makedirs(album_subdir, exist_ok=True)
+            
             try:
-                os.rename(f"{dir_name}/{filename}", f"SakamichiSeries/{new_name}")
+                os.rename(f"{dir_name}/{filename}", f"{album_subdir}/{new_name}")
             except OSError as err:
                 print("OS Error: {0}{1} already exists.".format(err, new_name))
 
-            audio = mutagen.File(f"SakamichiSeries/{new_name}", easy=True)
+            audio = mutagen.File(f"{album_subdir}/{new_name}", easy=True)
             audio["title"] = f"{group_letter}{index:03} - {kanji}"
             audio["artist"] = artist
             audio["album"] = album
-            audio.save(f"SakamichiSeries/{new_name}")
+            audio.save(f"{album_subdir}/{new_name}")
 
 
 os.makedirs("SakamichiSeries", exist_ok=True)
