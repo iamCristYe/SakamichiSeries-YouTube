@@ -34,6 +34,7 @@ def rename(dir_name):
             artist = titles[29 + 5 * (index - 1)]
 
             album = titles[30 + 5 * (index - 1)]
+            album = album.replace("走れ! Bicycle (TypeD)", "走れ！Bicycle")
             album = re.sub(r"\s?\(Special Edition\)", "", album)
             album = re.sub(r"\s?\(Complete Edition\)", "", album)
             album = re.sub(r"\s?\(New Song Edition\)", "", album)
@@ -57,7 +58,7 @@ def rename(dir_name):
                     "ガールズルール",
                     "バレッタ",
                     "気づいたら片想い",
-                    "夏のFree&Easy",
+                    "夏のFree＆Easy",
                     "何度目の青空か？",
                     "命は美しい",
                     "太陽ノック",
@@ -96,7 +97,7 @@ def rename(dir_name):
                     "生まれてから初めて見た夢",
                     "今が思い出になるまで",
                 ],
-                "NUA": ["僕だけの君～Under Super Best～"],
+                "NUA": ["僕だけの君 〜Under Super Best〜"],
                 "NBA": [
                     "Time flies",
                 ],
@@ -151,7 +152,7 @@ def rename(dir_name):
                     "真っ白なものは汚したくなる",
                 ],
                 "KBA": [
-                    "永遠より長い一瞬 〜 あの頃、確かに存在した私たち 〜",
+                    "永遠より長い一瞬 ～あの頃、確かに存在した私たち～",
                 ],
             }
 
