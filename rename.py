@@ -97,6 +97,7 @@ def rename(dir_name):
                     "それぞれの椅子",
                     "生まれてから初めて見た夢",
                     "今が思い出になるまで",
+                    "My respect",
                 ],
                 "NUA": ["僕だけの君 〜Under Super Best〜"],
                 "NBA": [
@@ -173,7 +174,7 @@ def rename(dir_name):
             if flag:
                 album = f"Other - {album}"
                 album_dir = "Other"
-            
+
             # Clean album_dir of special characters for directory name
             album_dir_clean = album_dir.replace("/", "⁄")
             album_dir_clean = album_dir_clean.replace("?", "？")
@@ -184,13 +185,13 @@ def rename(dir_name):
             album_dir_clean = album_dir_clean.replace("<", "＜")
             album_dir_clean = album_dir_clean.replace(">", "＞")
             album_dir_clean = album_dir_clean.replace('"', "＂")
-            album_dir_clean = album_dir_clean.replace('...', "…")
+            album_dir_clean = album_dir_clean.replace("...", "…")
             album_dir = album_dir_clean
 
             new_name = f"{group_letter}{index:03} - {kanji} - {filename[6:]}"
             album_subdir = f"SakamichiSeries/{album_dir}"
             os.makedirs(album_subdir, exist_ok=True)
-            
+
             try:
                 os.rename(f"{dir_name}/{filename}", f"{album_subdir}/{new_name}")
             except OSError as err:
