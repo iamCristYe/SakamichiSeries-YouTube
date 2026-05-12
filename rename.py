@@ -91,6 +91,7 @@ def rename(dir_name):
                     "ネーブルオレンジ",
                     "Same numbers",
                     "ビリヤニ",
+                    "最後に階段を駆け上がったのはいつだ？",
                 ],
                 "NA": [
                     "透明な色",
@@ -139,6 +140,7 @@ def rename(dir_name):
                     "UDAGAWA GENERATION",
                     "Make or Break",
                     "Unhappy birthday構文",
+                    "The growing up train",
                 ],
                 "SA": ["As you know?", "Addiction"],
                 "KS": [
